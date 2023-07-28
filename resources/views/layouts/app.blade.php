@@ -58,6 +58,11 @@
           text-decoration: none;
           color: #0d6efd;
         }
+
+        .bg-gray{
+            background-color: #ccc;
+            padding-top: 10px;
+        }
       </style>
 </head>
 <body>
