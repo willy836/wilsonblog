@@ -15,13 +15,57 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+          min-height: 100vh; /* Set the minimum height of the body to fill the entire viewport */
+          display: flex;
+          flex-direction: column;
+          position: relative;
+        }
+    
+        main {
+          flex: 1; /* Allow the main content area to grow and fill the available space */
+        }
+    
+        .footer {
+          background-color: #343a40;
+          bottom: 0;
+          color: #fff;
+          padding: 20px 0;
+        }
+
+        img {
+          width:100%;
+          height:auto;
+        }
+        .categories-bg{
+          position: absolute;
+          z-index: 1;
+          background-color: #eee;
+          text-decoration: none;
+          color: #333;
+        }
+
+        .categories-bg a {
+          width: 176px;
+          text-decoration: none;
+          color: #333;
+        }
+
+        .categories-bg a:hover {
+          text-decoration: none;
+          color: #0d6efd;
+        }
+      </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Home
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -30,11 +74,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -72,7 +117,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="container py-4">
             @yield('content')
         </main>
     </div>
