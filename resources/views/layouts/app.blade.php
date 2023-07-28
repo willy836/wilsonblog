@@ -15,6 +15,50 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+          min-height: 100vh; /* Set the minimum height of the body to fill the entire viewport */
+          display: flex;
+          flex-direction: column;
+          position: relative;
+        }
+    
+        main {
+          flex: 1; /* Allow the main content area to grow and fill the available space */
+        }
+    
+        .footer {
+          background-color: #343a40;
+          bottom: 0;
+          color: #fff;
+          padding: 20px 0;
+        }
+
+        img {
+          width:100%;
+          height:auto;
+        }
+        .categories-bg{
+          position: absolute;
+          z-index: 1;
+          background-color: #eee;
+          text-decoration: none;
+          color: #333;
+        }
+
+        .categories-bg a {
+          width: 176px;
+          text-decoration: none;
+          color: #333;
+        }
+
+        .categories-bg a:hover {
+          text-decoration: none;
+          color: #0d6efd;
+        }
+      </style>
 </head>
 <body>
     <div id="app">
