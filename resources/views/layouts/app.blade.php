@@ -58,6 +58,15 @@
           text-decoration: none;
           color: #0d6efd;
         }
+
+        .bg-gray{
+            background-color: #eee;
+            padding-top: 10px;
+        }
+
+        .alert-danger li {
+            list-style: none;
+        }
       </style>
 </head>
 <body>
