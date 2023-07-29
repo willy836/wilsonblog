@@ -15,18 +15,18 @@ class CommentSeeder extends Seeder
     {
         $commentsSeed = [
             [
-                'user_id' => 1,
+                'user_id' => 2,
                 'post_id' => 1,
                 'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quis necessitatibus in quidem cupiditate consequatur blanditiis iusto pariatur nobis beatae tenetur quos magnam eos, ut, corrupti repellat, obcaecati sunt quod.'
             ],
             [
-                'user_id' => 2,
-                'post_id' => 2,
+                'user_id' => 3,
+                'post_id' => 1,
                 'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quis necessitatibus in quidem cupiditate consequatur blanditiis iusto pariatur nobis beatae tenetur quos magnam eos, ut, corrupti repellat, obcaecati sunt quod.'
             ],
             [
-                'user_id' => 3,
-                'post_id' => 3,
+                'user_id' => 4,
+                'post_id' => 2,
                 'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quis necessitatibus in quidem cupiditate consequatur blanditiis iusto pariatur nobis beatae tenetur quos magnam eos, ut, corrupti repellat, obcaecati sunt quod.'
             ],
         ];

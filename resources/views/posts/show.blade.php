@@ -36,56 +36,29 @@
     </div>
 </article>
 <section>
+    @foreach ($post->comments as $comment)
     <article class="row mb-3">
         <div class="col-lg-4">
             
         </div>
         <div class="col-lg-8 bg-gray rounded">
-            <div class="row">
+            <div class="row ">
                 <div class="col-lg-2">
-                    <img src="https://i.pravatar.cc/100" class="rounded" alt="">
+                    <img src="https://i.pravatar.cc/100?u={{ $comment->id }}" class="rounded" alt="">
                 </div>
-                <div class="col-lg-10">
+                <div class="col-lg-10">     
                     <header>
-                        <h4>John Doe</h4>
-                        <p>Posted <time>4 months ago</time></p>
+                        <h4>{{ $comment->author->name }}</h4>
+                        <p>Posted <time>{{ $comment->created_at }}</time></p>
                     </header>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vel, odio quis assumenda 
-                        ipsam rerum repudiandae. Soluta itaque provident maxime?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vel, odio quis assumenda 
-                        ipsam rerum repudiandae. Soluta itaque provident maxime?
-                    </p>
-                    
+                       {{ $comment->body }} 
+                    </p>   
                 </div>
             </div>  
         </div>
     </article>
-    <article class="row mb-3">
-        <div class="col-lg-4">
-            
-        </div>
-        <div class="col-lg-8 bg-gray rounded">
-            <div class="row">
-                <div class="col-lg-2">
-                    <img src="https://i.pravatar.cc/100" class="rounded" alt="">
-                </div>
-                <div class="col-lg-10">
-                    <header>
-                        <h4>John Doe</h4>
-                        <p>Posted <time>4 months ago</time></p>
-                    </header>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vel, odio quis assumenda 
-                        ipsam rerum repudiandae. Soluta itaque provident maxime?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint vel, odio quis assumenda 
-                        ipsam rerum repudiandae. Soluta itaque provident maxime?
-                    </p>
-                    
-                </div>
-            </div>  
-        </div>
-    </article>
+    @endforeach
 </section>
 
 @endsection
