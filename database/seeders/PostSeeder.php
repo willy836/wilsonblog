@@ -19,42 +19,42 @@ class PostSeeder extends Seeder
                 'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos earum optio omnis, nostrum pariatur, tempora quos illum ut officia illo saepe voluptatibus magnam itaque libero ex beatae ullam quae architecto necessitatibus perspiciatis culpa dolorem iusto soluta sit. Perspiciatis, molestiae esse!',
                 'category_id' => 1,
                 'user_id' => 1,
-                'image' => 'https://pixabay.com/get/gf8be99e82a7c7a49c23e6d901ca2b387be70da49bebc530b88869384942fe439a117811b54c948870b656f26642895945ae8947485eda9662678e3cf4c38fb96_1280.jpg'
+                'image' => 'https://images.unsplash.com/photo-1611915458524-e79e11828001?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80'
             ],
             [
                 'title' => 'Post Two',
                 'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos earum optio omnis, nostrum pariatur, tempora quos illum ut officia illo saepe voluptatibus magnam itaque libero ex beatae ullam quae architecto necessitatibus perspiciatis culpa dolorem iusto soluta sit. Perspiciatis, molestiae esse!',
                 'category_id' => 2,
                 'user_id' => 2,
-                'image' => 'https://pixabay.com/get/gf8be99e82a7c7a49c23e6d901ca2b387be70da49bebc530b88869384942fe439a117811b54c948870b656f26642895945ae8947485eda9662678e3cf4c38fb96_1280.jpg'
+                'image' => 'https://images.unsplash.com/photo-1611915458524-e79e11828001?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80'
             ],
             [
                 'title' => 'Post Three',
                 'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos earum optio omnis, nostrum pariatur, tempora quos illum ut officia illo saepe voluptatibus magnam itaque libero ex beatae ullam quae architecto necessitatibus perspiciatis culpa dolorem iusto soluta sit. Perspiciatis, molestiae esse!',
                 'category_id' => 3,
                 'user_id' => 3,
-                'image' => 'https://pixabay.com/get/gf8be99e82a7c7a49c23e6d901ca2b387be70da49bebc530b88869384942fe439a117811b54c948870b656f26642895945ae8947485eda9662678e3cf4c38fb96_1280.jpg'
+                'image' => 'https://images.unsplash.com/photo-1611915458524-e79e11828001?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80'
             ],
             [
                 'title' => 'Post Four',
                 'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos earum optio omnis, nostrum pariatur, tempora quos illum ut officia illo saepe voluptatibus magnam itaque libero ex beatae ullam quae architecto necessitatibus perspiciatis culpa dolorem iusto soluta sit. Perspiciatis, molestiae esse!',
                 'category_id' => 1,
                 'user_id' => 2,
-                'image' => 'https://pixabay.com/get/gf8be99e82a7c7a49c23e6d901ca2b387be70da49bebc530b88869384942fe439a117811b54c948870b656f26642895945ae8947485eda9662678e3cf4c38fb96_1280.jpg'
+                'image' => 'https://images.unsplash.com/photo-1611915458524-e79e11828001?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80'
             ],
             [
                 'title' => 'Post Five',
                 'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos earum optio omnis, nostrum pariatur, tempora quos illum ut officia illo saepe voluptatibus magnam itaque libero ex beatae ullam quae architecto necessitatibus perspiciatis culpa dolorem iusto soluta sit. Perspiciatis, molestiae esse!',
                 'category_id' => 2,
                 'user_id' => 4,
-                'image' => 'https://pixabay.com/get/gf8be99e82a7c7a49c23e6d901ca2b387be70da49bebc530b88869384942fe439a117811b54c948870b656f26642895945ae8947485eda9662678e3cf4c38fb96_1280.jpg'
+                'image' => 'https://images.unsplash.com/photo-1611915458524-e79e11828001?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80'
             ],
             [
                 'title' => 'Post Six',
                 'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos earum optio omnis, nostrum pariatur, tempora quos illum ut officia illo saepe voluptatibus magnam itaque libero ex beatae ullam quae architecto necessitatibus perspiciatis culpa dolorem iusto soluta sit. Perspiciatis, molestiae esse!',
                 'category_id' => 3,
                 'user_id' => 5,
-                'image' => 'https://pixabay.com/get/gf8be99e82a7c7a49c23e6d901ca2b387be70da49bebc530b88869384942fe439a117811b54c948870b656f26642895945ae8947485eda9662678e3cf4c38fb96_1280.jpg'
+                'image' => 'https://images.unsplash.com/photo-1611915458524-e79e11828001?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80'
             ],
         ];
 
