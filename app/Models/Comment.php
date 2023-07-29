@@ -10,6 +10,8 @@ class Comment extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['body', 'user_id'];
+
     public function author() : BelongsTo  //foreign key is not author_id but user_id
     {
         return $this->belongsTo(User::class, 'user_id');

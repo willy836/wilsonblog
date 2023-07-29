@@ -60,8 +60,12 @@
         }
 
         .bg-gray{
-            background-color: #ccc;
+            background-color: #eee;
             padding-top: 10px;
+        }
+
+        .alert-danger li {
+            list-style: none;
         }
       </style>
 </head>

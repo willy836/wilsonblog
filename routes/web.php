@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,5 @@ Route::resource('posts', PostController::class);
 Route::get('category/{category_id}/posts', [CategoryController::class, 'showPosts'])->name('category.posts');
 
 Route::get('authors/{author}', [UserController::class, 'showAuthorPosts'])->name('authors.user_id');
+
+Route::post('posts/{post}/comments', [CommentController::class, 'store']);

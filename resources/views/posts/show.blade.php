@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@include('partials.messages')
 
 <article class="my-5">
     <div class="row">
@@ -36,6 +36,25 @@
     </div>
 </article>
 <section>
+    <div class="row mb-3">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-8">
+            <form action="/posts/{{ $post->id }}/comments" method="POST">
+                @csrf
+        
+                <header>
+                    <h5>Leave a comment</h5>
+                </header>
+                <div class="mb-2">
+                    <textarea name="body" id="comment" rows="3" class="form-control" required></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">POST</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
     @foreach ($post->comments as $comment)
     <article class="row mb-3">
         <div class="col-lg-4">
@@ -44,12 +63,12 @@
         <div class="col-lg-8 bg-gray rounded">
             <div class="row ">
                 <div class="col-lg-2">
-                    <img src="https://i.pravatar.cc/100?u={{ $comment->id }}" class="rounded" alt="">
+                    <img src="https://i.pravatar.cc/100?u={{ $comment->user_id }}" class="rounded" alt="">
                 </div>
                 <div class="col-lg-10">     
                     <header>
                         <h4>{{ $comment->author->name }}</h4>
-                        <p>Posted <time>{{ $comment->created_at }}</time></p>
+                        <p>Posted <time>{{ $comment->created_at->format('F j, Y, g:i a') }}</time></p>
                     </header>
                     <p>
                        {{ $comment->body }} 
