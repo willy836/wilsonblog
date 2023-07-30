@@ -36,9 +36,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required | min:3 |max:20',
+            'title' => 'required | min:3 |max:90',
             'body' => 'required |min:50',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'user_id' => 'required',
+            'image' => 'required'
         ]);
 
         Post::create($validatedData);
@@ -86,8 +88,11 @@ class PostController extends Controller
         $post = Post::find($id);
 
         $validatedData = $request->validate([
-            'title' => 'required | min:3 |max:20',
-            'body' => 'required |min:50'
+            'title' => 'required | min:3 |max:90',
+            'body' => 'required |min:50',
+            'category_id' => 'required',
+            'user_id' => 'required',
+            'image' => 'required'
         ]);
         
         $post->update($validatedData);

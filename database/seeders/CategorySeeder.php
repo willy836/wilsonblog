@@ -15,16 +15,16 @@ class CategorySeeder extends Seeder
     {
         $categoriesSeed = [
             [
-                'name' => 'Web Development',
-                'slug' => 'development'
+                'name' => 'Programming',
+                'slug' => 'programming'
             ],
             [
-                'name' => 'Food',
-                'slug' => 'food'
+                'name' => 'Medicine',
+                'slug' => 'medicine'
             ],
             [
-                'name' => 'Hobby',
-                'slug' => 'hobby'
+                'name' => 'Nature',
+                'slug' => 'nature'
             ]
         ];
 
