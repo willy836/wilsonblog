@@ -67,14 +67,30 @@
         .alert-danger li {
             list-style: none;
         }
+
+        .blog {
+            color: #2a9d8f;
+        }
+
+        .article-blog + article {
+            border-top: 2px solid #ddd;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
       </style>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div id="app" class="position-relative">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand blog" href="{{ url('/home') }}">
                     Home
+                </a>
+                <a class="navbar-brand blog" href="{{ url('/posts') }}">
+                    Posts
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

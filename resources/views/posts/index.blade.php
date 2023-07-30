@@ -4,7 +4,7 @@
 
 @include('partials.messages')
 
-<h2 class="text-center my-4">Latest blog posts</h2>
+<h2 class="text-center my-4">Latest <span class="blog">blog</span> posts</h2>
 <div class="d-flex justify-content-center">
     <div x-data="{show: false}" class="me-3">
         <button @click="show=!show" @click.away="show=false" class="mb-1 py-1 px-5 border border-muted rounded">Categories</button>
@@ -25,7 +25,7 @@
         <div class="card-body">
             <h4>{{ $post->title }}</h4>
             <p>
-                By <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a href="/category/{{ $post->category->slug }}/posts">{{ $post->category->name }}</a>
+                By <a href="/authors/{{ $post->author->username }}" class="blog">{{ $post->author->name }}</a> in <a href="/category/{{ $post->category->slug }}/posts" class="blog">{{ $post->category->name }}</a>
             </p>     
             <p>{{ Str::limit($post->body, 200, '...') }}</p>
             <a href="{{ route('posts.show', $post->id) }}">See Full Post</a>
