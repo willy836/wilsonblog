@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -26,8 +31,11 @@ class PostController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return view('posts.create');
+    { 
+        $categories = Category::all();
+        return view('posts.create', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -38,7 +46,7 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required | min:3 |max:90',
             'body' => 'required |min:50',
-            'category_id' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')],
             'user_id' => 'required',
             'image' => 'required'
         ]);
