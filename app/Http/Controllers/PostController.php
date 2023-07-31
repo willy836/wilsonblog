@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Symfony\Component\HttpFoundation\Response;
 
 class PostController extends Controller
 {
@@ -33,6 +34,11 @@ class PostController extends Controller
     public function create()
     { 
         $categories = Category::all();
+
+        if(auth()->user()->username !== 'jennifer'){
+            abort(Response::HTTP_FORBIDDEN);
+        }
+
         return view('posts.create', [
             'categories' => $categories
         ]);
@@ -82,6 +88,10 @@ class PostController extends Controller
 
         if(!$post){
             abort(404);
+        }
+
+        if(auth()->user()->username !== 'jennifer'){
+            abort(Response::HTTP_FORBIDDEN);
         }
 
         return view('posts.edit', [
