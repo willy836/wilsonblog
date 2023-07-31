@@ -26,12 +26,15 @@
         <div class="col-lg-8">
             <h4>{{ $post->title }}</h4>
             <p>{{ $post->body }}</p>
+            @if (auth()->user()->username === 'jennifer')
             <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary">Edit Post</a>
             <form action="{{ route('posts.destroy', $post->id) }}" method="POST" class="d-inline">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete Post</button>
             </form>
+            @endif
+            
         </div>
     </div>
 </article>

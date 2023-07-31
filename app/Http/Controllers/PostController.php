@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Symfony\Component\HttpFoundation\Response;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -26,8 +32,16 @@ class PostController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return view('posts.create');
+    { 
+        $categories = Category::all();
+        
+        if(auth()->user()->username !== 'jennifer'){
+            abort(Response::HTTP_FORBIDDEN);
+        }
+
+        return view('posts.create', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -38,10 +52,11 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required | min:3 |max:90',
             'body' => 'required |min:50',
-            'category_id' => 'required',
-            'user_id' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')],
             'image' => 'required'
         ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
 
         Post::create($validatedData);
 
@@ -70,13 +85,19 @@ class PostController extends Controller
     public function edit(string $id)
     {
         $post = Post::find($id);
+        $categories = Category::all();
 
         if(!$post){
             abort(404);
         }
 
+        if(auth()->user()->username !== 'jennifer'){
+            abort(Response::HTTP_FORBIDDEN);
+        }
+
         return view('posts.edit', [
-            'post' => $post
+            'post' => $post,
+            'categories' => $categories
         ]);
     }
 
@@ -91,9 +112,10 @@ class PostController extends Controller
             'title' => 'required | min:3 |max:90',
             'body' => 'required |min:50',
             'category_id' => 'required',
-            'user_id' => 'required',
             'image' => 'required'
         ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
         
         $post->update($validatedData);
 

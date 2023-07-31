@@ -14,13 +14,14 @@
         <textarea name="body" rows="5" class="form-control">{{ $post->body }}</textarea>
     </div>
     <div class="form-group mb-3">
-        <input type="number" name="category_id" class="form-control" value="{{ $post->category->id }}">
-    </div>
-    <div class="form-group mb-3">
-        <input type="number" name="user_id" class="form-control" value="{{ $post->author->id }}">
-    </div>
-    <div class="form-group mb-3">
         <input type="text" name="image" class="form-control" value="{{ $post->image }}">
+    </div>
+    <div class="form-group mb-3">
+        <select name="category_id" id="category_id">
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+        </select>
     </div>
     <button type="submit" class="btn btn-primary">Update Post</button>
 </form>

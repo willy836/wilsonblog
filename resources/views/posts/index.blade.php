@@ -5,7 +5,7 @@
 @include('partials.messages')
 
 <h2 class="text-center my-4">Latest <span class="blog">blog</span> posts</h2>
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center mb-3">
     <div x-data="{show: false}" class="me-3">
         <button @click="show=!show" @click.away="show=false" class="mb-1 py-1 px-5 border border-muted rounded">Categories</button>
         <div x-show="show" style="display: none;" class="categories-bg py-2 rounded">
@@ -18,7 +18,10 @@
         <input type="text" name="search" class="form-control" value="{{ request('search') }}" placeholder="Find something">
     </form>
 </div>
+@if (auth()->user()->username === 'jennifer')
 <a href="{{ route('posts.create') }}" class="btn btn-primary mb-3">Create Post</a>
+@endif
+
 @if (count($posts) > 0)
     @foreach ($posts as $post)
        <article class="card mb-3">
