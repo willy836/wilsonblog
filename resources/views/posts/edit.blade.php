@@ -19,7 +19,7 @@
     <div class="form-group mb-3">
         <select name="category_id" id="category_id">
             @foreach ($categories as $category)
-                <option value="{{ $category->id }}">{{ ucwords($category->name) }}</option>
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
         </select>
     </div>

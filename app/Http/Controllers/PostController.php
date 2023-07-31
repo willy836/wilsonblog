@@ -34,7 +34,7 @@ class PostController extends Controller
     public function create()
     { 
         $categories = Category::all();
-
+        
         if(auth()->user()->username !== 'jennifer'){
             abort(Response::HTTP_FORBIDDEN);
         }
@@ -53,9 +53,10 @@ class PostController extends Controller
             'title' => 'required | min:3 |max:90',
             'body' => 'required |min:50',
             'category_id' => ['required', Rule::exists('categories', 'id')],
-            'user_id' => 'required',
             'image' => 'required'
         ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
 
         Post::create($validatedData);
 
@@ -111,9 +112,10 @@ class PostController extends Controller
             'title' => 'required | min:3 |max:90',
             'body' => 'required |min:50',
             'category_id' => 'required',
-            'user_id' => 'required',
             'image' => 'required'
         ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
         
         $post->update($validatedData);
 
