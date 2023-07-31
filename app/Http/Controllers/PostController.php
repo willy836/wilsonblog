@@ -78,13 +78,15 @@ class PostController extends Controller
     public function edit(string $id)
     {
         $post = Post::find($id);
+        $categories = Category::all();
 
         if(!$post){
             abort(404);
         }
 
         return view('posts.edit', [
-            'post' => $post
+            'post' => $post,
+            'categories' => $categories
         ]);
     }
 
